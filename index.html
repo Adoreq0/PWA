@@ -6,11 +6,7 @@
     <title>Aplikacja pogodowa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="./manifest.json">
 </head>
 
 <body>
@@ -42,7 +38,7 @@
         <section>
             <h3>Zanieczyszczenie powietrza</h3>
             <div>
-                <img src="./pm25.png" alt="PM2.5" class="pollution_img">
+                <img src="./img/logo.png" alt="LOGO" class="pollution_img">
                 <span class="pollution_value"></span>
                 <span>&micro;g/m<sup>3</sup></span>
             </div>
@@ -53,6 +49,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./script.js"></script>
+    <script src="./sw.js"></script>
 </body>
 
 </html>
