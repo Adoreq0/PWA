@@ -42,19 +42,18 @@ function getWeatherInfo() {
 
         const url_pollution = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${response.data.coord.lat}&lon=${response.data.coord.lon}${apiInfo.key}`;
         axios.get(url_pollution).then((res) => {
-            console.log(res.data);
             const pm25 = res.data.list[0].components.pm2_5;
             pollutionValue.textContent = `${pm25}`;
 
-            // Swap icon based on PM2.5 level (requires you to add these files in ./img/)
+            pollutionImg.classList.remove('pm25-good', 'pm25-moderate', 'pm25-unhealthy', 'pm25-very-unhealthy');
             if (pm25 < 12) {
-                pollutionImg.src = './img/pm25-green.png';
+                pollutionImg.classList.add('pm25-good');
             } else if (pm25 < 35) {
-                pollutionImg.src = './img/pm25-yellow.png';
+                pollutionImg.classList.add('pm25-moderate');
             } else if (pm25 < 55) {
-                pollutionImg.src = './img/pm25-orange.png';
+                pollutionImg.classList.add('pm25-unhealthy');
             } else {
-                pollutionImg.src = './img/pm25-red.png';
+                pollutionImg.classList.add('pm25-very-unhealthy');
             }
         });
 
