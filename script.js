@@ -45,15 +45,14 @@ function getWeatherInfo() {
             const pm25 = res.data.list[0].components.pm2_5;
             pollutionValue.textContent = `${pm25}`;
 
-            pollutionImg.classList.remove('pm25-good', 'pm25-moderate', 'pm25-unhealthy', 'pm25-very-unhealthy');
             if (pm25 < 12) {
-                pollutionImg.classList.add('pm25-good');
+                pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(80deg)";
             } else if (pm25 < 35) {
-                pollutionImg.classList.add('pm25-moderate');
+                pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(40deg)";
             } else if (pm25 < 55) {
-                pollutionImg.classList.add('pm25-unhealthy');
+                pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(10deg)";
             } else {
-                pollutionImg.classList.add('pm25-very-unhealthy');
+                pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(0deg)";
             }
         });
 
