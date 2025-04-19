@@ -40,7 +40,7 @@ function getWeatherInfo() {
         windSpeed.textContent = `${Math.round(response.data.wind.speed * 3.6)} km/h`;
         errorMsg.textContent = "";
 
-        const url_pollution = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${response.data.coord.lat}&lon=${response.data.coord.lon}${apiInfo.key}`;
+        const url_pollution = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${response.data.coord.lat}&lon=${response.data.coord.lon}${apiInfo.key}`;
         axios.get(url_pollution).then((res) => {
             console.log(res.data);
             const pm25 = res.data.list[0].components.pm2_5;
@@ -48,12 +48,16 @@ function getWeatherInfo() {
 
             if (pm25 < 12) {
                 pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(80deg)";
+                pollutionImg.style.webkitFilter = pollutionImg.style.filter;
             } else if (pm25 < 35) {
                 pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(40deg)";
+                pollutionImg.style.webkitFilter = pollutionImg.style.filter;
             } else if (pm25 < 55) {
                 pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(10deg)";
+                pollutionImg.style.webkitFilter = pollutionImg.style.filter;
             } else {
                 pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(0deg)";
+                pollutionImg.style.webkitFilter = pollutionImg.style.filter;
             }
         });
 
