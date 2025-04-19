@@ -23,7 +23,14 @@ self.addEventListener('install', (event) => {
     const cache = await caches.open(CACHE_NAME);
     // Setting {cache: 'reload'} in the new request will ensure that the response
     // isn't fulfilled from the HTTP cache; i.e., it will be from the network.
-    await cache.add(new Request(OFFLINE_URL, {cache: 'reload'}));
+    await cache.addAll([
+      new Request(OFFLINE_URL, {cache: 'reload'}),
+      'img/pm25-default.png',
+      'img/pm25-green.png',
+      'img/pm25-yellow.png',
+      'img/pm25-orange.png',
+      'img/pm25-red.png'
+    ]);
   })());
 });
 
