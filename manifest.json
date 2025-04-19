@@ -1,9 +1,9 @@
 {
-    "name": "WizytówkaProfilowa",
-    "short_name": "Wizytowka",
+    "name": "AplikacjaPogodowa",
+    "short_name": "Pogoda",
     "theme_color": "#2fd394",
     "background_color": "#0a8cf4",
-    "display": "fullscreen",
+    "display": "standalone",
     "orientation": "portrait",
     "scope": "/",
     "start_url": "/PWA/",
