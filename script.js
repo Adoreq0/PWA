@@ -48,16 +48,16 @@ function getWeatherInfo() {
 
             if (pm25 < 12) {
                 pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(80deg)";
-                pollutionImg.style.webkitFilter = pollutionImg.style.filter;
+                pollutionImg.style.WebkitFilter = pollutionImg.style.filter;
             } else if (pm25 < 35) {
                 pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(40deg)";
-                pollutionImg.style.webkitFilter = pollutionImg.style.filter;
+                pollutionImg.style.WebkitFilter = pollutionImg.style.filter;
             } else if (pm25 < 55) {
                 pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(10deg)";
-                pollutionImg.style.webkitFilter = pollutionImg.style.filter;
+                pollutionImg.style.WebkitFilter = pollutionImg.style.filter;
             } else {
                 pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(0deg)";
-                pollutionImg.style.webkitFilter = pollutionImg.style.filter;
+                pollutionImg.style.WebkitFilter = pollutionImg.style.filter;
             }
         });
 
