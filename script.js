@@ -46,18 +46,15 @@ function getWeatherInfo() {
             const pm25 = res.data.list[0].components.pm2_5;
             pollutionValue.textContent = `${pm25}`;
 
+            // Swap icon based on PM2.5 level (requires you to add these files in ./img/)
             if (pm25 < 12) {
-                pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(80deg)";
-                pollutionImg.style.WebkitFilter = pollutionImg.style.filter;
+                pollutionImg.src = './img/pm25-green.png';
             } else if (pm25 < 35) {
-                pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(40deg)";
-                pollutionImg.style.WebkitFilter = pollutionImg.style.filter;
+                pollutionImg.src = './img/pm25-yellow.png';
             } else if (pm25 < 55) {
-                pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(10deg)";
-                pollutionImg.style.WebkitFilter = pollutionImg.style.filter;
+                pollutionImg.src = './img/pm25-orange.png';
             } else {
-                pollutionImg.style.filter = "invert(1) sepia(1) saturate(10) hue-rotate(0deg)";
-                pollutionImg.style.WebkitFilter = pollutionImg.style.filter;
+                pollutionImg.src = './img/pm25-red.png';
             }
         });
 
