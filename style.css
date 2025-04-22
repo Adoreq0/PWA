@@ -165,4 +165,57 @@ footer {
     .search input {
         width: 200px;
     }
+
+    /* Stosujemy flex-direction: column dla całego pola wyszukiwania */
+    .search {
+        flex-direction: column;
+        gap: 0.5rem;
+        /* odstęp między inputem a przyciskiem */
+    }
+
+    /* Input i przycisk na pełną szerokość z zachowaniem zaokrągleń */
+    .search input,
+    .search button {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 4px;
+    }
+
+    .search button {
+        margin-top: 0.5rem;
+        /* odstęp nad przyciskiem */
+        padding: 0.75rem;
+        /* większa powierzchnia dotyku */
+    }
+
+    /* Dopasowanie wielkości czcionek i obrazków w nagłówku pogody */
+    .weather_top h2.city_name {
+        font-size: 1.4rem;
+    }
+
+    .weather_top p.temp {
+        font-size: 1.5rem;
+    }
+
+    .weather_top img.weather_img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Pola z danymi pogodowymi zajmują pełną szerokość z marginesami */
+    .weather_bottom p {
+        min-width: auto;
+        width: 90%;
+        margin: 0.25rem 0;
+    }
+
+    /* Zmniejszenie rozmiaru ikony i paddingu w sekcji zanieczyszczeń */
+    .pollution_img {
+        width: 50px;
+        height: 50px;
+    }
+
+    section>div {
+        padding: 0.5rem;
+    }
 }
